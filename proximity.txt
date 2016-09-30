@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+<title>BOLT</title>
+</head>
+<body bgcolor="#01FFFF" > 
+<center>
+<h3> Sensor data</h3> 
+<button> <br> 
+<a href="/digitalRead?pin=4">READ sensor on pin 4</a> 
+</button> 
+</center> 
+</body> 
+</html>

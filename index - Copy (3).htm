@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html>
+<head>
+<title>BOlT</title>
+<script type="text/javascript" src="serveFile?filename=bolt.js">
+setDebug(true);
+</script>
+<script>
+var m;
+
+function motor()
+{
+digitalWrite(0,HIGH);
+digitalWrite (1,LOW);
+}
+function stopmotor()
+{
+digitalWrite(0,LOW);
+digitalWrite(1,LOW);
+}
+function reverse(){
+digitalWrite(1,HIGH);
+digitalWrite (0,LOW);
+}
+function readldr(){
+analogRead(A3,'output1');
+}
+function read()
+{analogRead(A0,'output');
+
+
+}
+function continuous()
+{
+
+m=setInterval(read,2000);
+n=setInterval(readldr,2000);
+}
+function stop()
+{
+clearInterval(m);
+clearInterval(n);
+}
+function lighton()
+{
+digitalWrite(3,LOW);
+}
+function lightoff()
+{
+digitalWrite(3,HIGH);
+}
+</script>
+</head>
+<body bgcolor="#01FFFF">
+<center>
+<h3> Sensor data</h3>
+
+<h4>vibration sensor</h4>
+<span id="output"></span><br>
+<h4>ldr value</h4>
+<span id="output1"></span><br>
+<button onclick="motor()">motor on<br>
+</button>
+<button onclick="stopmotor()">stop<br>
+</button>
+
+<button onclick="reverse()">reverse<br>
+</button><br>
+<button onclick="continuous()">start data<br>
+</button>
+<button onclick="stop()">stop data <br>
+</button><br>
+
+<button onclick="lighton()">light on<br>
+</button>
+<button onclick="lightoff()">light off<br>
+</button><br>
+
+<span id="output"></span><br>
+
+<span id="output1"></span><br>
+</center>
+</body>
+</html>
